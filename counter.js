@@ -19,6 +19,12 @@ function updateCountdown() {
     const seconds = Math.floor(diff/1000)
     diff = diff - seconds * 1000
 
+    if(diff < 0) {
+        document.getElementById("countdown").textContent = "🎉 Happy New Year! 🎉";
+        clearInterval(timer);
+        return;
+    }
+
     document.getElementById("countdown").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
