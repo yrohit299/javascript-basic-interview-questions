@@ -4,6 +4,21 @@
  */
 
 // Example: 
+function getSquare(n, cb) {
+    setTimeout(() => {
+        cb(n * n)
+    }, 1000)
+}
+
+getSquare(2, (result) => {
+    getSquare(result, (result2) => {
+        getSquare(result2, (result3) => {
+            console.log(result3)
+        })
+    })
+})
+
+//////////////////////////////////////////////////
 const add = (a, b, cb) => {
     setTimeout(() => {
         cb(a+b)
